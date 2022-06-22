@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="text/javascript" src="/static/js/multiavatar.min.js"></script>
+<script type="text/javascript" src="/static/js/saveSvgAsPng.min.js"></script>
+<script>
+    window.onload = function () {
+        var url = location.pathname;
+        var avatarId = Date.now();
+        if (url !== "/") {
+            avatarId = url.split("/")[1];
+            if (!avatarId.endsWith(".png")) {
+                avatarId += ".png";
+            }
+        }
+        var iSVG = multiavatar(avatarId);
+        document.getElementById('identicon').innerHTML = iSVG;
+        saveSvgAsPng((document.getElementsByTagName('svg'))[0], avatarId, {
+            height: 600,
+            width: 600,
+            scale: 0.8
+        })
+    }
+</script>
+
+<body>
+<svg id="identicon"></svg>
+</body>
+
+</html>
