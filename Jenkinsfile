@@ -15,7 +15,7 @@ pipeline {
             }
             steps {
                 echo 'Pulling..'
-                git 'https://github.com/Sort-8/Multiavatar.git'
+                git credentialsId: '200', url: 'git@github.com:Sort-8/Multiavatar.git'
             }
         }
         stage('Build') {
