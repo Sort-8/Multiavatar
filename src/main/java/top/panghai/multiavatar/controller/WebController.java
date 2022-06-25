@@ -28,13 +28,7 @@ public class WebController{
     private static final float WIDTH = 600;
     private static final float HEIGHT = 600;
 
-    @GetMapping("/index")
-    public String index() {
-        System.out.println(111111111);
-        return "index";
-    }
-
-    @GetMapping(value = "/{avatarId}", produces = MediaType.IMAGE_JPEG_VALUE)
+    @GetMapping(value = "/**/{avatarId}", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public void getSVG(HttpServletResponse response, @PathVariable String avatarId) throws IOException, TranscoderException {
         String SVG = "";
