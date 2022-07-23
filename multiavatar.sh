@@ -11,7 +11,7 @@ APP_PATH=target/$APP_NAME
 #运行日志
 LOG_FILE=fivechess.log
 #JVM运行参数
-JVM_OPTS="-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m -Dfile.encoding=UTF-8"
+JVM_OPTS="-Xms64m -Xmx256m -XX:MetaspaceSize=64m -XX:MaxMetaspaceSize=256m -Dfile.encoding=UTF-8"
 
 #使用说明，用来提示输入参数  
 usage() {  
